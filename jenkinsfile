@@ -13,7 +13,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 // Checkout the repository using the defined branch
-                git url: 'https://github.com/sgandeplli/python.git', branch: "${GIT_BRANCH}"
+                git url: 'https://github.com/satya-git07/Final-project-.git', branch: "${GIT_BRANCH}"
             }
         }
         stage('Terraform Init') {
