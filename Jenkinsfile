@@ -5,7 +5,7 @@ pipeline {
         // Define values as environment variables for better maintainability
         CLUSTER_NAME = 'my-cluster1'
         ZONE = 'us-west3'
-        PROJECT_ID = 'eighth-upgrade-436909-e3'
+        PROJECT_ID = 'satyanarayana'
         GIT_BRANCH = 'main'
     }
 
