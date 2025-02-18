@@ -16,6 +16,20 @@ pipeline {
                 git url: 'https://github.com/satya-git07/Final-project-.git', branch: "${GIT_BRANCH}"
             }
         }
+        
+        stage("Docker Build & Push") {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-credentials', toolName: 'docker') {   
+                        sh "docker build -t flask ."
+                        sh "docker tag flask:latest satyadockerhub07/flask:tagname"
+                        sh "docker push satyadockerhub07/flask:tagname"
+                    }
+                }
+            }
+        }
+
+        
         stage('Terraform Init') {
             steps {
                 // Initialize Terraform
